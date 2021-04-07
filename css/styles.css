@@ -16,8 +16,19 @@ body{
     font-size: 56px;
     margin-top: 40px;
 }
+#content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .card{
     height: 146px;
     width: 117px;
+    background-image: url(../img/front.png);
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
     background-color: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
 }
