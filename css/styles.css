@@ -22,7 +22,7 @@ body{
 }
 #stopwatch{
     position: absolute;
-    right: 0;
+    right: 20px;
     top: 44px;
     font-size: 42px;
 }
@@ -95,9 +95,31 @@ body{
     transform: rotateY(-180deg);
 }
 
-@media (max-width: 400px){
+@media (max-width: 1057px){
+    #top{
+        width: auto;
+    }
+}
+@media (max-width: 800px){
+    #stopwatch{
+        top: 5px;
+        right: 5px;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 500px){
     .title{
         font-size: 36px;
         margin: 40px 12px;
+    }
+    .card{
+        height: 93px;
+        width: 78px;
+        margin: 8px;
+    }
+    .face{
+        background-size: 70px;
+
     }
 }
