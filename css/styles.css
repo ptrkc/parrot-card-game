@@ -56,25 +56,25 @@ body{
     transform: rotateY(180deg);
     background-image: url(../img/front.png);
 }
-.back-face.bob{
+.card.bob .back-face{
     background-image: url(../img/bobrossparrot.gif);
 }
-.back-face.explode{
+.card.explode .back-face{
     background-image: url(../img/explodyparrot.gif);
 }
-.back-face.fiesta{
+.card.fiesta .back-face{
     background-image: url(../img/fiestaparrot.gif);
 }
-.back-face.metal{
+.card.metal .back-face{
     background-image: url(../img/metalparrot.gif);
 }
-.back-face.revertit{
+.card.revertit .back-face{
     background-image: url(../img/revertitparrot.gif);
 }
-.back-face.triplets{
+.card.triplets .back-face{
     background-image: url(../img/tripletsparrot.gif);
 }
-.back-face.unicorn{
+.card.unicorn .back-face{
     background-image: url(../img/unicornparrot.gif);
 }
 
