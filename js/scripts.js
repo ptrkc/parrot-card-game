@@ -1,6 +1,9 @@
 let amountOfCards = 10;
 const possibleCards = ["bob", "explode", "fiesta", "metal", "revertit", "triplets", "unicorn"]
 let chosenCards = [];
+let lastCard = "";
+let lastParrot = "";
+let blocked = false;
 document.querySelector("#content").addEventListener('click', userClick);
 askAmount();
 
@@ -39,9 +42,27 @@ function comparador() {
 
 function userClick(event) {
     const clickedCard = event.target.parentNode
-    if (clickedCard.classList[0] === "card" && !clickedCard.classList.contains("flipped")) {
+    const clickedParrot = clickedCard.classList[1]
+    if (clickedCard.classList[0] === "card" &&
+        !clickedCard.classList.contains("flipped") &&
+        blocked !== true) {
         clickedCard.classList.add("flipped");
-    } else {
-        console.log("nope");
+        if (lastCard === "") {
+
+            lastCard = clickedCard;
+            lastParrot = clickedParrot;
+        } else if (clickedParrot !== lastParrot) {
+            blocked = true;
+            setTimeout(function () {
+                clickedCard.classList.remove("flipped");
+                lastCard.classList.remove("flipped");
+                blocked = false;
+                lastCard = "";
+                lastParrot = "";
+            }, 1000);
+        } else {
+            lastCard = "";
+            lastParrot = "";
+        }
     }
 }
