@@ -8,7 +8,10 @@ body{
     font-weight: bold;
 }
 #top{
+    width: 1057px;
+    margin: 0px auto;
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
 }
@@ -16,6 +19,12 @@ body{
     text-align: center;
     font-size: 56px;
     margin: 40px auto 47px auto;
+}
+#stopwatch{
+    position: absolute;
+    right: 0;
+    top: 44px;
+    font-size: 42px;
 }
 #content{
     display: flex;
