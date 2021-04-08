@@ -30,6 +30,8 @@ body{
     width: 117px;
     margin: 17px;
     position: relative;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .face {
@@ -39,7 +41,6 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100px;
-
     border: 1px solid #99CEA8;
     border-radius: 5px;
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
@@ -53,6 +54,7 @@ body{
 }
 .back-face {
     transform: rotateY(180deg);
+    background-image: url(../img/front.png);
 }
 .back-face.bob{
     background-image: url(../img/bobrossparrot.gif);
@@ -76,11 +78,11 @@ body{
     background-image: url(../img/unicornparrot.gif);
 }
 
-.card:hover .back-face {
+.card.flipped .back-face {
     transform: rotateY(0deg);
 }
 
-.card:hover .front-face {
+.card.flipped .front-face {
     transform: rotateY(-180deg);
 }
 
