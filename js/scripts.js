@@ -1,4 +1,4 @@
-let amountOfCards = 10;
+let amountOfCards = "";
 const possibleCards = ["bob", "explode", "fiesta", "metal", "revertit", "triplets", "unicorn"]
 let chosenCards = [];
 let lastCard = "";
@@ -9,31 +9,26 @@ askAmount();
 
 function askAmount() {
     while (amountOfCards > 14 || amountOfCards < 4 || amountOfCards % 2 !== 0) {
-        amountOfCards = parseInt(prompt("Com quantas cartas você deseja jogar?"));
+        amountOfCards = parseInt(prompt("Com quantas cartas você deseja jogar?(Números pares de 2 a 14)"));
     }
-    setAmountOfCards();
+    setCards();
 }
 
-function setAmountOfCards() {
-    for (let i = 0; i < 14 - amountOfCards; i++) {
-        document.querySelector(".card").remove()
-    }
+function setCards() {
     randomizeCards();
-    setCardType();
-}
-
-function setCardType() {
-    const cardList = document.querySelectorAll(".card")
-    for (let i = 0; i < cardList.length; i++) {
-        cardList[i].classList.add(chosenCards[i]);
+    document.getElementById("content").innerHTML = "";
+    for (let i = 0; i < amountOfCards; i++) {
+        document.getElementById("content").innerHTML += `
+    <li class="card ${chosenCards[i]}">
+        <div class="front-face face"></div>
+        <div class="back-face face"></div>
+    </li>`
     }
 }
-
 function randomizeCards() {
     chosenCards = possibleCards.sort(comparador).slice(0, amountOfCards / 2);
     chosenCards = chosenCards.concat(chosenCards);
     chosenCards = chosenCards.sort(comparador);
-    console.log(chosenCards);
 }
 
 function comparador() {
@@ -48,15 +43,14 @@ function userClick(event) {
         blocked !== true) {
         clickedCard.classList.add("flipped");
         if (lastCard === "") {
-
             lastCard = clickedCard;
             lastParrot = clickedParrot;
         } else if (clickedParrot !== lastParrot) {
             blocked = true;
             setTimeout(function () {
+                blocked = false;
                 clickedCard.classList.remove("flipped");
                 lastCard.classList.remove("flipped");
-                blocked = false;
                 lastCard = "";
                 lastParrot = "";
             }, 1000);
