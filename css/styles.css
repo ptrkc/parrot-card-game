@@ -36,6 +36,10 @@ body{
     width: 100%;
     height: 100%;
     background-color: #A7E9AF;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100px;
+
     border: 1px solid #99CEA8;
     border-radius: 5px;
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
@@ -46,16 +50,30 @@ body{
   }
 .front-face{
     background-image: url(../img/front.png);
-    background-repeat: no-repeat;
-    background-size: 100px;
-    background-position: center;
 }
 .back-face {
     transform: rotateY(180deg);
+}
+.back-face.bob{
+    background-image: url(../img/bobrossparrot.gif);
+}
+.back-face.explode{
+    background-image: url(../img/explodyparrot.gif);
+}
+.back-face.fiesta{
     background-image: url(../img/fiestaparrot.gif);
-    background-repeat: no-repeat;
-    background-size: 100px;
-    background-position: center;
+}
+.back-face.metal{
+    background-image: url(../img/metalparrot.gif);
+}
+.back-face.revertit{
+    background-image: url(../img/revertitparrot.gif);
+}
+.back-face.triplets{
+    background-image: url(../img/tripletsparrot.gif);
+}
+.back-face.unicorn{
+    background-image: url(../img/unicornparrot.gif);
 }
 
 .card:hover .back-face {
