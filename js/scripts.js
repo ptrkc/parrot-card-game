@@ -87,17 +87,17 @@ function userClick(event) {
             lastParrot = "";
         }
         if (flippedCards === amountOfCards) {
-            gameOver();
+            stopStopwatch();
+            setTimeout(gameOver, 500);
         }
     }
 }
 
 function gameOver() {
-    stopStopwatch();
     alert(`Você ganhou em ${totalMoves} jogadas e ${seconds} segundos!`);
     let validAnswer = false;
     while (validAnswer !== true) {
-        playAgain = prompt("Você quer jogar novamente?(sim ou não)");
+        playAgain = prompt("Você quer jogar novamente?\n(sim ou não)");
         if (playAgain === "sim" || playAgain === "s") {
             validAnswer = true;
             amountOfCards = 0;
