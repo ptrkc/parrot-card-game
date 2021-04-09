@@ -17,7 +17,7 @@ askAmount();
 
 function askAmount() {
     while (amountOfCards > 14 || amountOfCards < 4 || amountOfCards % 2 !== 0) {
-        amountOfCards = parseInt(prompt("Com quantas cartas você deseja jogar?(Números pares de 4 a 14)"));
+        amountOfCards = parseInt(prompt("Com quantas cartas você deseja jogar? (Números pares de 4 a 14)"));
     }
     setCards();
     startStopwatch();
@@ -38,8 +38,6 @@ function stopStopwatch() {
     clearInterval(interval);
 }
 
-
-
 function setCards() {
     randomizeCards();
     document.getElementById("content").innerHTML = "";
@@ -51,13 +49,14 @@ function setCards() {
     </li>`;
     }
 }
+
 function randomizeCards() {
-    chosenCards = possibleCards.sort(comparador).slice(0, amountOfCards / 2);
+    chosenCards = possibleCards.sort(comparator).slice(0, amountOfCards / 2);
     chosenCards = chosenCards.concat(chosenCards);
-    chosenCards = chosenCards.sort(comparador);
+    chosenCards = chosenCards.sort(comparator);
 }
 
-function comparador() {
+function comparator() {
     return Math.random() - 0.5;
 }
 
@@ -96,8 +95,8 @@ function userClick(event) {
 function gameOver() {
     alert(`Você ganhou em ${totalMoves} jogadas e ${seconds} segundos!`);
     let validAnswer = false;
-    while (validAnswer !== true) {
-        playAgain = prompt("Você quer jogar novamente?\n(sim ou não)");
+    while (!validAnswer) {
+        playAgain = prompt("Você quer jogar novamente? (sim ou não)");
         if (playAgain === "sim" || playAgain === "s") {
             validAnswer = true;
             amountOfCards = 0;
