@@ -49,7 +49,7 @@ body{
     background-color: #A7E9AF;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100px;
+    background-size: 100px 100px;
     border: 1px solid #99CEA8;
     border-radius: 5px;
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
@@ -119,7 +119,7 @@ body{
         margin: 8px;
     }
     .face{
-        background-size: 70px;
+        background-size: 70px 70px;
 
     }
 }

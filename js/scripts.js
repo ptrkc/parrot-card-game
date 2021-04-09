@@ -100,6 +100,7 @@ function gameOver() {
         playAgain = prompt("Você quer jogar novamente?(sim ou não)");
         if (playAgain === "sim" || playAgain === "s") {
             validAnswer = true;
+            amountOfCards = 0;
             totalMoves = 0;
             flippedCards = 0;
             seconds = 0;
